@@ -70,16 +70,16 @@ GameMaster.events
     sendDiscordEmbedFightOutcome(event);
   });
 
-Operators.events
-  .FightOutcome({}, function (error, event) {
-    // console.log("EVENT FIRST".event);
-  })
-  .on("connected", function (subscriptionId) {
-    console.log(subscriptionId, "Listening to FightOutcomes Weapons");
-  })
-  .on("data", function (event) {
-    sendDiscordEmbedFightOutcome(event);
-  });
+// Operators.events
+//   .FightOutcome({}, function (error, event) {
+//     // console.log("EVENT FIRST".event);
+//   })
+//   .on("connected", function (subscriptionId) {
+//     console.log(subscriptionId, "Listening to FightOutcomes Weapons");
+//   })
+//   .on("data", function (event) {
+//     sendDiscordEmbedFightOutcome(event);
+//   });
 
 //Functions
 
