@@ -1,0 +1,187 @@
+{
+  "contractName": "ICharacter",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/ICharacter.sol\":\"ICharacter\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/ICharacter.sol\":{\"keccak256\":\"0x19762365a024c4bc69b02c7a35c378b2af886fcf6814bcf3f7004eff2a33138c\",\"urls\":[\"bzz-raw://080db828f1ce9b1f5c0769fc007becf3e1c361740616d4a1828da38fe179837b\",\"dweb:/ipfs/QmWkPQGsFs2RxJvEAfvXZu1Xtervj62pVwHyd94SJxxgTP\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ninterface ICharacter {\n    enum CharacterType {Elite, Trainee, Citizen}\n}",
+  "sourcePath": "/Users/school/dev/ciphershooters/contracts/interfaces/ICharacter.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/ICharacter.sol",
+    "exportedSymbols": {
+      "ICharacter": [
+        28784
+      ]
+    },
+    "id": 28785,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 28779,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:73"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 28784,
+        "linearizedBaseContracts": [
+          28784
+        ],
+        "name": "ICharacter",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "ICharacter.CharacterType",
+            "id": 28783,
+            "members": [
+              {
+                "id": 28780,
+                "name": "Elite",
+                "nodeType": "EnumValue",
+                "src": "113:5:73"
+              },
+              {
+                "id": 28781,
+                "name": "Trainee",
+                "nodeType": "EnumValue",
+                "src": "120:7:73"
+              },
+              {
+                "id": 28782,
+                "name": "Citizen",
+                "nodeType": "EnumValue",
+                "src": "129:7:73"
+              }
+            ],
+            "name": "CharacterType",
+            "nodeType": "EnumDefinition",
+            "src": "93:44:73"
+          }
+        ],
+        "scope": 28785,
+        "src": "66:73:73"
+      }
+    ],
+    "src": "32:107:73"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/interfaces/ICharacter.sol",
+      "exportedSymbols": {
+        "ICharacter": [
+          28784
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 28779,
+        "name": "PragmaDirective",
+        "src": "32:32:73"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            28784
+          ],
+          "name": "ICharacter",
+          "scope": 28785
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "ICharacter.CharacterType",
+              "name": "CharacterType"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "Elite"
+                },
+                "id": 28780,
+                "name": "EnumValue",
+                "src": "113:5:73"
+              },
+              {
+                "attributes": {
+                  "name": "Trainee"
+                },
+                "id": 28781,
+                "name": "EnumValue",
+                "src": "120:7:73"
+              },
+              {
+                "attributes": {
+                  "name": "Citizen"
+                },
+                "id": 28782,
+                "name": "EnumValue",
+                "src": "129:7:73"
+              }
+            ],
+            "id": 28783,
+            "name": "EnumDefinition",
+            "src": "93:44:73"
+          }
+        ],
+        "id": 28784,
+        "name": "ContractDefinition",
+        "src": "66:73:73"
+      }
+    ],
+    "id": 28785,
+    "name": "SourceUnit",
+    "src": "32:107:73"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.6",
+  "updatedAt": "2022-06-04T16:14:57.908Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

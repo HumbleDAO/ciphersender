@@ -1,0 +1,486 @@
+{
+  "contractName": "ICipherCore",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "harvestYieldInTags",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "depositInTags",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"depositInTags\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"harvestYieldInTags\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/ICipherCore.sol\":\"ICipherCore\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/ICipherCore.sol\":{\"keccak256\":\"0xaca3749191fec5108d43187b5e28e987154b8032c580eb1430019a16ba6caeed\",\"urls\":[\"bzz-raw://02fca0ef032b721c5b315fa92a7064699ca931d08115b30b95902d7afa45e9f2\",\"dweb:/ipfs/QmXHNqonJwcvZqxQkWrqzPowz9d4ExCLKNNbKTpUgTMbFV\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ninterface ICipherCore {\n    // This action is allowed only to Game Master\n    function harvestYieldInTags() external;\n\n    function deposit(uint256 amount) external;\n\n    function depositInTags(uint256 amount) external;\n}\n",
+  "sourcePath": "/Users/school/dev/ciphershooters/contracts/interfaces/ICipherCore.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/ICipherCore.sol",
+    "exportedSymbols": {
+      "ICipherCore": [
+        28800
+      ]
+    },
+    "id": 28801,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 28786,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:74"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 28800,
+        "linearizedBaseContracts": [
+          28800
+        ],
+        "name": "ICipherCore",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "68898a2a",
+            "id": 28789,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "harvestYieldInTags",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28787,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "171:2:74"
+            },
+            "returnParameters": {
+              "id": 28788,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "182:0:74"
+            },
+            "scope": 28800,
+            "src": "144:39:74",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "b6b55f25",
+            "id": 28794,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deposit",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28792,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28791,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28794,
+                  "src": "206:14:74",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28790,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "206:7:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "205:16:74"
+            },
+            "returnParameters": {
+              "id": 28793,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "230:0:74"
+            },
+            "scope": 28800,
+            "src": "189:42:74",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "51baa36e",
+            "id": 28799,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "depositInTags",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28797,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28796,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28799,
+                  "src": "260:14:74",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28795,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "260:7:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "259:16:74"
+            },
+            "returnParameters": {
+              "id": 28798,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "284:0:74"
+            },
+            "scope": 28800,
+            "src": "237:48:74",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 28801,
+        "src": "66:221:74"
+      }
+    ],
+    "src": "32:256:74"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/interfaces/ICipherCore.sol",
+      "exportedSymbols": {
+        "ICipherCore": [
+          28800
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 28786,
+        "name": "PragmaDirective",
+        "src": "32:32:74"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            28800
+          ],
+          "name": "ICipherCore",
+          "scope": 28801
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "68898a2a",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "harvestYieldInTags",
+              "overrides": null,
+              "scope": 28800,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28787,
+                "name": "ParameterList",
+                "src": "171:2:74"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28788,
+                "name": "ParameterList",
+                "src": "182:0:74"
+              }
+            ],
+            "id": 28789,
+            "name": "FunctionDefinition",
+            "src": "144:39:74"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "b6b55f25",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "deposit",
+              "overrides": null,
+              "scope": 28800,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "amount",
+                      "overrides": null,
+                      "scope": 28794,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 28790,
+                        "name": "ElementaryTypeName",
+                        "src": "206:7:74"
+                      }
+                    ],
+                    "id": 28791,
+                    "name": "VariableDeclaration",
+                    "src": "206:14:74"
+                  }
+                ],
+                "id": 28792,
+                "name": "ParameterList",
+                "src": "205:16:74"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28793,
+                "name": "ParameterList",
+                "src": "230:0:74"
+              }
+            ],
+            "id": 28794,
+            "name": "FunctionDefinition",
+            "src": "189:42:74"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "51baa36e",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "depositInTags",
+              "overrides": null,
+              "scope": 28800,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "amount",
+                      "overrides": null,
+                      "scope": 28799,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 28795,
+                        "name": "ElementaryTypeName",
+                        "src": "260:7:74"
+                      }
+                    ],
+                    "id": 28796,
+                    "name": "VariableDeclaration",
+                    "src": "260:14:74"
+                  }
+                ],
+                "id": 28797,
+                "name": "ParameterList",
+                "src": "259:16:74"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28798,
+                "name": "ParameterList",
+                "src": "284:0:74"
+              }
+            ],
+            "id": 28799,
+            "name": "FunctionDefinition",
+            "src": "237:48:74"
+          }
+        ],
+        "id": 28800,
+        "name": "ContractDefinition",
+        "src": "66:221:74"
+      }
+    ],
+    "id": 28801,
+    "name": "SourceUnit",
+    "src": "32:256:74"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.6",
+  "updatedAt": "2022-06-04T16:14:57.910Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

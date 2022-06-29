@@ -1,0 +1,295 @@
+{
+  "contractName": "IAaveLendingPoolAddressesProvider",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getLendingPool",
+      "outputs": [
+        {
+          "internalType": "contract IAaveLendingPool",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getLendingPool\",\"outputs\":[{\"internalType\":\"contract IAaveLendingPool\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/IAaveLendingPoolAddressesProvider.sol\":\"IAaveLendingPoolAddressesProvider\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/IAaveLendingPool.sol\":{\"keccak256\":\"0xf656df9d26ef642963673a8803a717fa543ddcc7153a9ff55f8632f6ad9c9682\",\"urls\":[\"bzz-raw://f19640988ef1f19a9a4892aff8f86d06ca742de2f1a12d15396ed5e3fb1ffc2b\",\"dweb:/ipfs/QmeHXfMEaERgsT2dbwDXQNzcjn3HPjcvkooeHCtZC6e4QJ\"]},\"project:/contracts/interfaces/IAaveLendingPoolAddressesProvider.sol\":{\"keccak256\":\"0x745a8537695f0992a1e5a680ca5645e359bfef9c918510d44bf742e328d0932a\",\"urls\":[\"bzz-raw://a8f62bde9d1a3fd3ef07e891f729e83c4e33e653927e39d0822e292196105fd7\",\"dweb:/ipfs/QmQUG7DMgPvZ95wqQUpzHHB3qVvnH6hrULxT8K6mb1ZQFp\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\nimport './IAaveLendingPool.sol';\n\ninterface IAaveLendingPoolAddressesProvider {\n  function getLendingPool() external view returns (IAaveLendingPool);\n}",
+  "sourcePath": "/Users/school/dev/ciphershooters/contracts/interfaces/IAaveLendingPoolAddressesProvider.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/IAaveLendingPoolAddressesProvider.sol",
+    "exportedSymbols": {
+      "IAaveLendingPoolAddressesProvider": [
+        28777
+      ]
+    },
+    "id": 28778,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 28770,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:72"
+      },
+      {
+        "absolutePath": "project:/contracts/interfaces/IAaveLendingPool.sol",
+        "file": "./IAaveLendingPool.sol",
+        "id": 28771,
+        "nodeType": "ImportDirective",
+        "scope": 28778,
+        "sourceUnit": 28769,
+        "src": "66:32:72",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 28777,
+        "linearizedBaseContracts": [
+          28777
+        ],
+        "name": "IAaveLendingPoolAddressesProvider",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "0261bf8b",
+            "id": 28776,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLendingPool",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28772,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "171:2:72"
+            },
+            "returnParameters": {
+              "id": 28775,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28774,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28776,
+                  "src": "197:16:72",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IAaveLendingPool_$28768",
+                    "typeString": "contract IAaveLendingPool"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 28773,
+                    "name": "IAaveLendingPool",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 28768,
+                    "src": "197:16:72",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IAaveLendingPool_$28768",
+                      "typeString": "contract IAaveLendingPool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "196:18:72"
+            },
+            "scope": 28777,
+            "src": "148:67:72",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 28778,
+        "src": "100:117:72"
+      }
+    ],
+    "src": "32:185:72"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/interfaces/IAaveLendingPoolAddressesProvider.sol",
+      "exportedSymbols": {
+        "IAaveLendingPoolAddressesProvider": [
+          28777
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 28770,
+        "name": "PragmaDirective",
+        "src": "32:32:72"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 28769,
+          "absolutePath": "project:/contracts/interfaces/IAaveLendingPool.sol",
+          "file": "./IAaveLendingPool.sol",
+          "scope": 28778,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 28771,
+        "name": "ImportDirective",
+        "src": "66:32:72"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            28777
+          ],
+          "name": "IAaveLendingPoolAddressesProvider",
+          "scope": 28778
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "0261bf8b",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getLendingPool",
+              "overrides": null,
+              "scope": 28777,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28772,
+                "name": "ParameterList",
+                "src": "171:2:72"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "overrides": null,
+                      "scope": 28776,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract IAaveLendingPool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "IAaveLendingPool",
+                          "referencedDeclaration": 28768,
+                          "type": "contract IAaveLendingPool"
+                        },
+                        "id": 28773,
+                        "name": "UserDefinedTypeName",
+                        "src": "197:16:72"
+                      }
+                    ],
+                    "id": 28774,
+                    "name": "VariableDeclaration",
+                    "src": "197:16:72"
+                  }
+                ],
+                "id": 28775,
+                "name": "ParameterList",
+                "src": "196:18:72"
+              }
+            ],
+            "id": 28776,
+            "name": "FunctionDefinition",
+            "src": "148:67:72"
+          }
+        ],
+        "id": 28777,
+        "name": "ContractDefinition",
+        "src": "100:117:72"
+      }
+    ],
+    "id": 28778,
+    "name": "SourceUnit",
+    "src": "32:185:72"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.6",
+  "updatedAt": "2022-06-04T16:14:57.906Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

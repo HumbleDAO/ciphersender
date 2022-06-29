@@ -1,0 +1,806 @@
+{
+  "contractName": "ICrafting",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "weapon",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "salvage",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "weaponsList",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "bulkSalvage",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "character",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "lootItems",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"weaponsList\",\"type\":\"uint256[]\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"bulkSalvage\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"character\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"lootItems\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"weapon\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"salvage\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/ICrafting.sol\":\"ICrafting\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/ICrafting.sol\":{\"keccak256\":\"0x2b873abd85e7209fc6169ae9f4a5b14b6f673d088cc98f65002fc4083ff6d109\",\"urls\":[\"bzz-raw://671c417ce2305a5ebce1a403294917eb842858fbff1f8f5b87e35b1bca0d59e2\",\"dweb:/ipfs/QmYUThyPsHrdiDC7hqRS5ixUCF6SGbqSLKFrmxtFDMDnzK\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ninterface ICrafting {\n    function salvage(uint256 weapon, address user) external;\n    function bulkSalvage(uint256[] calldata weaponsList, address user) external;\n\n    function lootItems(\n        uint256 character,\n        uint256 amount,\n        address user\n    ) external;\n}\n",
+  "sourcePath": "/Users/school/dev/ciphershooters/contracts/interfaces/ICrafting.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/ICrafting.sol",
+    "exportedSymbols": {
+      "ICrafting": [
+        28827
+      ]
+    },
+    "id": 28828,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 28802,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:75"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 28827,
+        "linearizedBaseContracts": [
+          28827
+        ],
+        "name": "ICrafting",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "03cadbd3",
+            "id": 28809,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "salvage",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28807,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28804,
+                  "name": "weapon",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28809,
+                  "src": "109:14:75",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28803,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "109:7:75",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28806,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28809,
+                  "src": "125:12:75",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28805,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "125:7:75",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "108:30:75"
+            },
+            "returnParameters": {
+              "id": 28808,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "147:0:75"
+            },
+            "scope": 28827,
+            "src": "92:56:75",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "26d54c1e",
+            "id": 28817,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "bulkSalvage",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28815,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28812,
+                  "name": "weaponsList",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28817,
+                  "src": "174:30:75",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 28810,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "174:7:75",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 28811,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "174:9:75",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28814,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28817,
+                  "src": "206:12:75",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28813,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "206:7:75",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "173:46:75"
+            },
+            "returnParameters": {
+              "id": 28816,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "228:0:75"
+            },
+            "scope": 28827,
+            "src": "153:76:75",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "0b8e1d14",
+            "id": 28826,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "lootItems",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28824,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28819,
+                  "name": "character",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28826,
+                  "src": "263:17:75",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28818,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "263:7:75",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28821,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28826,
+                  "src": "290:14:75",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28820,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "290:7:75",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28823,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28826,
+                  "src": "314:12:75",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28822,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "314:7:75",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "253:79:75"
+            },
+            "returnParameters": {
+              "id": 28825,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "341:0:75"
+            },
+            "scope": 28827,
+            "src": "235:107:75",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 28828,
+        "src": "66:278:75"
+      }
+    ],
+    "src": "32:313:75"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/interfaces/ICrafting.sol",
+      "exportedSymbols": {
+        "ICrafting": [
+          28827
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 28802,
+        "name": "PragmaDirective",
+        "src": "32:32:75"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            28827
+          ],
+          "name": "ICrafting",
+          "scope": 28828
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "03cadbd3",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "salvage",
+              "overrides": null,
+              "scope": 28827,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "weapon",
+                      "overrides": null,
+                      "scope": 28809,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 28803,
+                        "name": "ElementaryTypeName",
+                        "src": "109:7:75"
+                      }
+                    ],
+                    "id": 28804,
+                    "name": "VariableDeclaration",
+                    "src": "109:14:75"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "user",
+                      "overrides": null,
+                      "scope": 28809,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 28805,
+                        "name": "ElementaryTypeName",
+                        "src": "125:7:75"
+                      }
+                    ],
+                    "id": 28806,
+                    "name": "VariableDeclaration",
+                    "src": "125:12:75"
+                  }
+                ],
+                "id": 28807,
+                "name": "ParameterList",
+                "src": "108:30:75"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28808,
+                "name": "ParameterList",
+                "src": "147:0:75"
+              }
+            ],
+            "id": 28809,
+            "name": "FunctionDefinition",
+            "src": "92:56:75"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "26d54c1e",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "bulkSalvage",
+              "overrides": null,
+              "scope": 28827,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "weaponsList",
+                      "overrides": null,
+                      "scope": 28817,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "uint256[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "uint256[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 28810,
+                            "name": "ElementaryTypeName",
+                            "src": "174:7:75"
+                          }
+                        ],
+                        "id": 28811,
+                        "name": "ArrayTypeName",
+                        "src": "174:9:75"
+                      }
+                    ],
+                    "id": 28812,
+                    "name": "VariableDeclaration",
+                    "src": "174:30:75"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "user",
+                      "overrides": null,
+                      "scope": 28817,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 28813,
+                        "name": "ElementaryTypeName",
+                        "src": "206:7:75"
+                      }
+                    ],
+                    "id": 28814,
+                    "name": "VariableDeclaration",
+                    "src": "206:12:75"
+                  }
+                ],
+                "id": 28815,
+                "name": "ParameterList",
+                "src": "173:46:75"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28816,
+                "name": "ParameterList",
+                "src": "228:0:75"
+              }
+            ],
+            "id": 28817,
+            "name": "FunctionDefinition",
+            "src": "153:76:75"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "0b8e1d14",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "lootItems",
+              "overrides": null,
+              "scope": 28827,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "character",
+                      "overrides": null,
+                      "scope": 28826,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 28818,
+                        "name": "ElementaryTypeName",
+                        "src": "263:7:75"
+                      }
+                    ],
+                    "id": 28819,
+                    "name": "VariableDeclaration",
+                    "src": "263:17:75"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "amount",
+                      "overrides": null,
+                      "scope": 28826,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 28820,
+                        "name": "ElementaryTypeName",
+                        "src": "290:7:75"
+                      }
+                    ],
+                    "id": 28821,
+                    "name": "VariableDeclaration",
+                    "src": "290:14:75"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "user",
+                      "overrides": null,
+                      "scope": 28826,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 28822,
+                        "name": "ElementaryTypeName",
+                        "src": "314:7:75"
+                      }
+                    ],
+                    "id": 28823,
+                    "name": "VariableDeclaration",
+                    "src": "314:12:75"
+                  }
+                ],
+                "id": 28824,
+                "name": "ParameterList",
+                "src": "253:79:75"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28825,
+                "name": "ParameterList",
+                "src": "341:0:75"
+              }
+            ],
+            "id": 28826,
+            "name": "FunctionDefinition",
+            "src": "235:107:75"
+          }
+        ],
+        "id": 28827,
+        "name": "ContractDefinition",
+        "src": "66:278:75"
+      }
+    ],
+    "id": 28828,
+    "name": "SourceUnit",
+    "src": "32:313:75"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.6",
+  "updatedAt": "2022-06-04T16:14:57.912Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

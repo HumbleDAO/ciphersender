@@ -1,0 +1,1030 @@
+{
+  "contractName": "IRewarder",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "pid",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "sushiAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "newLpAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "onSushiReward",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "pid",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "sushiAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "pendingTokens",
+      "outputs": [
+        {
+          "internalType": "contract IERC20[]",
+          "name": "",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"pid\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"sushiAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"newLpAmount\",\"type\":\"uint256\"}],\"name\":\"onSushiReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"pid\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"sushiAmount\",\"type\":\"uint256\"}],\"name\":\"pendingTokens\",\"outputs\":[{\"internalType\":\"contract IERC20[]\",\"name\":\"\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/RewardsManager/interfaces/IRewarder.sol\":\"IRewarder\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52\",\"urls\":[\"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c\",\"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5\",\"urls\":[\"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08\",\"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC\"]},\"@openzeppelin/contracts/token/ERC20/SafeERC20.sol\":{\"keccak256\":\"0xf12dfbe97e6276980b83d2830bb0eb75e0cf4f3e626c2471137f82158ae6a0fc\",\"urls\":[\"bzz-raw://b3a849c2d95e85463909e5b5c920b13e7a11216ca14127085e16d22b9379d52a\",\"dweb:/ipfs/QmUg3CZDbCCcQdroEpexBy5ZFd5vD1UWijWQq9qHZjtJNQ\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x28911e614500ae7c607a432a709d35da25f3bc5ddc8bd12b278b66358070c0ea\",\"urls\":[\"bzz-raw://256c8c8af5eb072bc473226ab2b2187149b8fc04f5f4a4820db22527f5ce8e3c\",\"dweb:/ipfs/QmRvi5BhnL7Rxf85KrJhwM6RRhukm4tzoctRdgQEheNyiN\"]},\"project:/contracts/RewardsManager/interfaces/IRewarder.sol\":{\"keccak256\":\"0x2c7b5657fb6d333776d62eade8e4edb34a541933f84947257ea59772afa4ef84\",\"urls\":[\"bzz-raw://4da979a286b736733074fc0fbc91b4e69874ac221cc1be435a1adbac7de32e7c\",\"dweb:/ipfs/Qma3jp5dg1rXySQa3U4bPYWiiuDxHYXY58RWAVybAkYFVE\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.6.0;\nimport \"@openzeppelin/contracts/token/ERC20/IERC20.sol\";\nimport \"@openzeppelin/contracts/token/ERC20/SafeERC20.sol\";\ninterface IRewarder {\n    using SafeERC20 for IERC20;\n    function onSushiReward(uint256 pid, address user, address recipient, uint256 sushiAmount, uint256 newLpAmount) external;\n    function pendingTokens(uint256 pid, address user, uint256 sushiAmount) external view returns (IERC20[] memory, uint256[] memory);\n}\n",
+  "sourcePath": "/Users/school/dev/ciphershooters/contracts/RewardsManager/interfaces/IRewarder.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/RewardsManager/interfaces/IRewarder.sol",
+    "exportedSymbols": {
+      "IRewarder": [
+        26443
+      ]
+    },
+    "id": 26444,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 26409,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:66"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "file": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "id": 26410,
+        "nodeType": "ImportDirective",
+        "scope": 26444,
+        "sourceUnit": 7582,
+        "src": "57:56:66",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/token/ERC20/SafeERC20.sol",
+        "file": "@openzeppelin/contracts/token/ERC20/SafeERC20.sol",
+        "id": 26411,
+        "nodeType": "ImportDirective",
+        "scope": 26444,
+        "sourceUnit": 7795,
+        "src": "114:59:66",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 26443,
+        "linearizedBaseContracts": [
+          26443
+        ],
+        "name": "IRewarder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 26414,
+            "libraryName": {
+              "contractScope": null,
+              "id": 26412,
+              "name": "SafeERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 7794,
+              "src": "206:9:66",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeERC20_$7794",
+                "typeString": "library SafeERC20"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "200:27:66",
+            "typeName": {
+              "contractScope": null,
+              "id": 26413,
+              "name": "IERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 7581,
+              "src": "220:6:66",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IERC20_$7581",
+                "typeString": "contract IERC20"
+              }
+            }
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "8bf63742",
+            "id": 26427,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onSushiReward",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 26425,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 26416,
+                  "name": "pid",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 26427,
+                  "src": "255:11:66",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 26415,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "255:7:66",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 26418,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 26427,
+                  "src": "268:12:66",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 26417,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "268:7:66",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 26420,
+                  "name": "recipient",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 26427,
+                  "src": "282:17:66",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 26419,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "282:7:66",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 26422,
+                  "name": "sushiAmount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 26427,
+                  "src": "301:19:66",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 26421,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "301:7:66",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 26424,
+                  "name": "newLpAmount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 26427,
+                  "src": "322:19:66",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 26423,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "322:7:66",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "254:88:66"
+            },
+            "returnParameters": {
+              "id": 26426,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "351:0:66"
+            },
+            "scope": 26443,
+            "src": "232:120:66",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "d63b3c49",
+            "id": 26442,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "pendingTokens",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 26434,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 26429,
+                  "name": "pid",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 26442,
+                  "src": "380:11:66",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 26428,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "380:7:66",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 26431,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 26442,
+                  "src": "393:12:66",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 26430,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "393:7:66",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 26433,
+                  "name": "sushiAmount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 26442,
+                  "src": "407:19:66",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 26432,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "407:7:66",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "379:48:66"
+            },
+            "returnParameters": {
+              "id": 26441,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 26437,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 26442,
+                  "src": "451:15:66",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_contract$_IERC20_$7581_$dyn_memory_ptr",
+                    "typeString": "contract IERC20[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 26435,
+                      "name": "IERC20",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 7581,
+                      "src": "451:6:66",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IERC20_$7581",
+                        "typeString": "contract IERC20"
+                      }
+                    },
+                    "id": 26436,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "451:8:66",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_IERC20_$7581_$dyn_storage_ptr",
+                      "typeString": "contract IERC20[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 26440,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 26442,
+                  "src": "468:16:66",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 26438,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "468:7:66",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 26439,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "468:9:66",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "450:35:66"
+            },
+            "scope": 26443,
+            "src": "357:129:66",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 26444,
+        "src": "174:314:66"
+      }
+    ],
+    "src": "33:456:66"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/RewardsManager/interfaces/IRewarder.sol",
+      "exportedSymbols": {
+        "IRewarder": [
+          26443
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.6",
+            ".0"
+          ]
+        },
+        "id": 26409,
+        "name": "PragmaDirective",
+        "src": "33:23:66"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 7582,
+          "absolutePath": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+          "file": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+          "scope": 26444,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 26410,
+        "name": "ImportDirective",
+        "src": "57:56:66"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 7795,
+          "absolutePath": "@openzeppelin/contracts/token/ERC20/SafeERC20.sol",
+          "file": "@openzeppelin/contracts/token/ERC20/SafeERC20.sol",
+          "scope": 26444,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 26411,
+        "name": "ImportDirective",
+        "src": "114:59:66"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            26443
+          ],
+          "name": "IRewarder",
+          "scope": 26444
+        },
+        "children": [
+          {
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SafeERC20",
+                  "referencedDeclaration": 7794,
+                  "type": "library SafeERC20"
+                },
+                "id": 26412,
+                "name": "UserDefinedTypeName",
+                "src": "206:9:66"
+              },
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "IERC20",
+                  "referencedDeclaration": 7581,
+                  "type": "contract IERC20"
+                },
+                "id": 26413,
+                "name": "UserDefinedTypeName",
+                "src": "220:6:66"
+              }
+            ],
+            "id": 26414,
+            "name": "UsingForDirective",
+            "src": "200:27:66"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "8bf63742",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "onSushiReward",
+              "overrides": null,
+              "scope": 26443,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "pid",
+                      "overrides": null,
+                      "scope": 26427,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 26415,
+                        "name": "ElementaryTypeName",
+                        "src": "255:7:66"
+                      }
+                    ],
+                    "id": 26416,
+                    "name": "VariableDeclaration",
+                    "src": "255:11:66"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "user",
+                      "overrides": null,
+                      "scope": 26427,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 26417,
+                        "name": "ElementaryTypeName",
+                        "src": "268:7:66"
+                      }
+                    ],
+                    "id": 26418,
+                    "name": "VariableDeclaration",
+                    "src": "268:12:66"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "recipient",
+                      "overrides": null,
+                      "scope": 26427,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 26419,
+                        "name": "ElementaryTypeName",
+                        "src": "282:7:66"
+                      }
+                    ],
+                    "id": 26420,
+                    "name": "VariableDeclaration",
+                    "src": "282:17:66"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "sushiAmount",
+                      "overrides": null,
+                      "scope": 26427,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 26421,
+                        "name": "ElementaryTypeName",
+                        "src": "301:7:66"
+                      }
+                    ],
+                    "id": 26422,
+                    "name": "VariableDeclaration",
+                    "src": "301:19:66"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "newLpAmount",
+                      "overrides": null,
+                      "scope": 26427,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 26423,
+                        "name": "ElementaryTypeName",
+                        "src": "322:7:66"
+                      }
+                    ],
+                    "id": 26424,
+                    "name": "VariableDeclaration",
+                    "src": "322:19:66"
+                  }
+                ],
+                "id": 26425,
+                "name": "ParameterList",
+                "src": "254:88:66"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 26426,
+                "name": "ParameterList",
+                "src": "351:0:66"
+              }
+            ],
+            "id": 26427,
+            "name": "FunctionDefinition",
+            "src": "232:120:66"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "d63b3c49",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "pendingTokens",
+              "overrides": null,
+              "scope": 26443,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "pid",
+                      "overrides": null,
+                      "scope": 26442,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 26428,
+                        "name": "ElementaryTypeName",
+                        "src": "380:7:66"
+                      }
+                    ],
+                    "id": 26429,
+                    "name": "VariableDeclaration",
+                    "src": "380:11:66"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "user",
+                      "overrides": null,
+                      "scope": 26442,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 26430,
+                        "name": "ElementaryTypeName",
+                        "src": "393:7:66"
+                      }
+                    ],
+                    "id": 26431,
+                    "name": "VariableDeclaration",
+                    "src": "393:12:66"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "sushiAmount",
+                      "overrides": null,
+                      "scope": 26442,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 26432,
+                        "name": "ElementaryTypeName",
+                        "src": "407:7:66"
+                      }
+                    ],
+                    "id": 26433,
+                    "name": "VariableDeclaration",
+                    "src": "407:19:66"
+                  }
+                ],
+                "id": 26434,
+                "name": "ParameterList",
+                "src": "379:48:66"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "overrides": null,
+                      "scope": 26442,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "contract IERC20[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "contract IERC20[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "IERC20",
+                              "referencedDeclaration": 7581,
+                              "type": "contract IERC20"
+                            },
+                            "id": 26435,
+                            "name": "UserDefinedTypeName",
+                            "src": "451:6:66"
+                          }
+                        ],
+                        "id": 26436,
+                        "name": "ArrayTypeName",
+                        "src": "451:8:66"
+                      }
+                    ],
+                    "id": 26437,
+                    "name": "VariableDeclaration",
+                    "src": "451:15:66"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "overrides": null,
+                      "scope": 26442,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "uint256[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "uint256[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 26438,
+                            "name": "ElementaryTypeName",
+                            "src": "468:7:66"
+                          }
+                        ],
+                        "id": 26439,
+                        "name": "ArrayTypeName",
+                        "src": "468:9:66"
+                      }
+                    ],
+                    "id": 26440,
+                    "name": "VariableDeclaration",
+                    "src": "468:16:66"
+                  }
+                ],
+                "id": 26441,
+                "name": "ParameterList",
+                "src": "450:35:66"
+              }
+            ],
+            "id": 26442,
+            "name": "FunctionDefinition",
+            "src": "357:129:66"
+          }
+        ],
+        "id": 26443,
+        "name": "ContractDefinition",
+        "src": "174:314:66"
+      }
+    ],
+    "id": 26444,
+    "name": "SourceUnit",
+    "src": "33:456:66"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.6",
+  "updatedAt": "2022-06-04T16:14:57.861Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

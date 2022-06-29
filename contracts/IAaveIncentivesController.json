@@ -1,0 +1,863 @@
+{
+  "contractName": "IAaveIncentivesController",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "assets",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "claimRewards",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "getUserUnclaimedRewards",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "REWARD_TOKEN",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"REWARD_TOKEN\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"assets\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"claimRewards\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getUserUnclaimedRewards\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"REWARD_TOKEN()\":{\"details\":\"for backward compatibility with previous implementation of the Incentives controller\"},\"claimRewards(address[],uint256,address)\":{\"details\":\"Claims reward for an user, on all the assets of the lending pool, accumulating the pending rewards\",\"params\":{\"amount\":\"Amount of rewards to claim\",\"to\":\"Address that will be receiving the rewards\"},\"returns\":{\"_0\":\"Rewards claimed*\"}},\"getUserUnclaimedRewards(address)\":{\"details\":\"returns the unclaimed rewards of the user\",\"params\":{\"user\":\"the address of the user\"},\"returns\":{\"_0\":\"the unclaimed user rewards\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/IAaveIncentivesController.sol\":\"IAaveIncentivesController\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/IAaveIncentivesController.sol\":{\"keccak256\":\"0x161d3767c0863c06220d2bd22759ff77d06c19d81f821f1a682a8419254e62fe\",\"urls\":[\"bzz-raw://17c311d374eb5ba5564ce5db92bf0197dca563f14c268eed1c8ea3919f6deb35\",\"dweb:/ipfs/QmNekya3Qg6Z5GE2D4nz4WCrSdfMiD5nBCbzz9xFXbohQ6\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ninterface IAaveIncentivesController {\n  /**\n   * @dev Claims reward for an user, on all the assets of the lending pool, accumulating the pending rewards\n   * @param amount Amount of rewards to claim\n   * @param to Address that will be receiving the rewards\n   * @return Rewards claimed\n   **/\n  function claimRewards(\n    address[] calldata assets,\n    uint256 amount,\n    address to\n  ) external returns (uint256);\n\n  /**\n   * @dev returns the unclaimed rewards of the user\n   * @param user the address of the user\n   * @return the unclaimed user rewards\n   */\n  function getUserUnclaimedRewards(address user) external view returns (uint256);\n\n  /**\n  * @dev for backward compatibility with previous implementation of the Incentives controller\n  */\n  function REWARD_TOKEN() external view returns (address);\n}",
+  "sourcePath": "/Users/school/dev/ciphershooters/contracts/interfaces/IAaveIncentivesController.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/IAaveIncentivesController.sol",
+    "exportedSymbols": {
+      "IAaveIncentivesController": [
+        28740
+      ]
+    },
+    "id": 28741,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 28712,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:70"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 28740,
+        "linearizedBaseContracts": [
+          28740
+        ],
+        "name": "IAaveIncentivesController",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 28713,
+              "nodeType": "StructuredDocumentation",
+              "src": "106:252:70",
+              "text": "@dev Claims reward for an user, on all the assets of the lending pool, accumulating the pending rewards\n@param amount Amount of rewards to claim\n@param to Address that will be receiving the rewards\n@return Rewards claimed*"
+            },
+            "functionSelector": "3111e7b3",
+            "id": 28725,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "claimRewards",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28721,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28716,
+                  "name": "assets",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28725,
+                  "src": "388:25:70",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 28714,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "388:7:70",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 28715,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "388:9:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28718,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28725,
+                  "src": "419:14:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28717,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "419:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28720,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28725,
+                  "src": "439:10:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28719,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "439:7:70",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "382:71:70"
+            },
+            "returnParameters": {
+              "id": 28724,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28723,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28725,
+                  "src": "472:7:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28722,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "472:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "471:9:70"
+            },
+            "scope": 28740,
+            "src": "361:120:70",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 28726,
+              "nodeType": "StructuredDocumentation",
+              "src": "485:142:70",
+              "text": "@dev returns the unclaimed rewards of the user\n@param user the address of the user\n@return the unclaimed user rewards"
+            },
+            "functionSelector": "198fa81e",
+            "id": 28733,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUserUnclaimedRewards",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28729,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28728,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28733,
+                  "src": "663:12:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28727,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "663:7:70",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "662:14:70"
+            },
+            "returnParameters": {
+              "id": 28732,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28731,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28733,
+                  "src": "700:7:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28730,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "700:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "699:9:70"
+            },
+            "scope": 28740,
+            "src": "630:79:70",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 28734,
+              "nodeType": "StructuredDocumentation",
+              "src": "713:102:70",
+              "text": "@dev for backward compatibility with previous implementation of the Incentives controller"
+            },
+            "functionSelector": "99248ea7",
+            "id": 28739,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "REWARD_TOKEN",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28735,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "839:2:70"
+            },
+            "returnParameters": {
+              "id": 28738,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28737,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28739,
+                  "src": "865:7:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28736,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "865:7:70",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "864:9:70"
+            },
+            "scope": 28740,
+            "src": "818:56:70",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 28741,
+        "src": "66:810:70"
+      }
+    ],
+    "src": "32:844:70"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/interfaces/IAaveIncentivesController.sol",
+      "exportedSymbols": {
+        "IAaveIncentivesController": [
+          28740
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 28712,
+        "name": "PragmaDirective",
+        "src": "32:32:70"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            28740
+          ],
+          "name": "IAaveIncentivesController",
+          "scope": 28741
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "3111e7b3",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "claimRewards",
+              "overrides": null,
+              "scope": 28740,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@dev Claims reward for an user, on all the assets of the lending pool, accumulating the pending rewards\n@param amount Amount of rewards to claim\n@param to Address that will be receiving the rewards\n@return Rewards claimed*"
+                },
+                "id": 28713,
+                "name": "StructuredDocumentation",
+                "src": "106:252:70"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "assets",
+                      "overrides": null,
+                      "scope": 28725,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "address[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "address[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "nonpayable",
+                              "type": "address"
+                            },
+                            "id": 28714,
+                            "name": "ElementaryTypeName",
+                            "src": "388:7:70"
+                          }
+                        ],
+                        "id": 28715,
+                        "name": "ArrayTypeName",
+                        "src": "388:9:70"
+                      }
+                    ],
+                    "id": 28716,
+                    "name": "VariableDeclaration",
+                    "src": "388:25:70"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "amount",
+                      "overrides": null,
+                      "scope": 28725,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 28717,
+                        "name": "ElementaryTypeName",
+                        "src": "419:7:70"
+                      }
+                    ],
+                    "id": 28718,
+                    "name": "VariableDeclaration",
+                    "src": "419:14:70"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "to",
+                      "overrides": null,
+                      "scope": 28725,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 28719,
+                        "name": "ElementaryTypeName",
+                        "src": "439:7:70"
+                      }
+                    ],
+                    "id": 28720,
+                    "name": "VariableDeclaration",
+                    "src": "439:10:70"
+                  }
+                ],
+                "id": 28721,
+                "name": "ParameterList",
+                "src": "382:71:70"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "overrides": null,
+                      "scope": 28725,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 28722,
+                        "name": "ElementaryTypeName",
+                        "src": "472:7:70"
+                      }
+                    ],
+                    "id": 28723,
+                    "name": "VariableDeclaration",
+                    "src": "472:7:70"
+                  }
+                ],
+                "id": 28724,
+                "name": "ParameterList",
+                "src": "471:9:70"
+              }
+            ],
+            "id": 28725,
+            "name": "FunctionDefinition",
+            "src": "361:120:70"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "198fa81e",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getUserUnclaimedRewards",
+              "overrides": null,
+              "scope": 28740,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@dev returns the unclaimed rewards of the user\n@param user the address of the user\n@return the unclaimed user rewards"
+                },
+                "id": 28726,
+                "name": "StructuredDocumentation",
+                "src": "485:142:70"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "user",
+                      "overrides": null,
+                      "scope": 28733,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 28727,
+                        "name": "ElementaryTypeName",
+                        "src": "663:7:70"
+                      }
+                    ],
+                    "id": 28728,
+                    "name": "VariableDeclaration",
+                    "src": "663:12:70"
+                  }
+                ],
+                "id": 28729,
+                "name": "ParameterList",
+                "src": "662:14:70"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "overrides": null,
+                      "scope": 28733,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 28730,
+                        "name": "ElementaryTypeName",
+                        "src": "700:7:70"
+                      }
+                    ],
+                    "id": 28731,
+                    "name": "VariableDeclaration",
+                    "src": "700:7:70"
+                  }
+                ],
+                "id": 28732,
+                "name": "ParameterList",
+                "src": "699:9:70"
+              }
+            ],
+            "id": 28733,
+            "name": "FunctionDefinition",
+            "src": "630:79:70"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "99248ea7",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "REWARD_TOKEN",
+              "overrides": null,
+              "scope": 28740,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@dev for backward compatibility with previous implementation of the Incentives controller"
+                },
+                "id": 28734,
+                "name": "StructuredDocumentation",
+                "src": "713:102:70"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28735,
+                "name": "ParameterList",
+                "src": "839:2:70"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "overrides": null,
+                      "scope": 28739,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 28736,
+                        "name": "ElementaryTypeName",
+                        "src": "865:7:70"
+                      }
+                    ],
+                    "id": 28737,
+                    "name": "VariableDeclaration",
+                    "src": "865:7:70"
+                  }
+                ],
+                "id": 28738,
+                "name": "ParameterList",
+                "src": "864:9:70"
+              }
+            ],
+            "id": 28739,
+            "name": "FunctionDefinition",
+            "src": "818:56:70"
+          }
+        ],
+        "id": 28740,
+        "name": "ContractDefinition",
+        "src": "66:810:70"
+      }
+    ],
+    "id": 28741,
+    "name": "SourceUnit",
+    "src": "32:844:70"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.6",
+  "updatedAt": "2022-06-04T16:14:57.904Z",
+  "devdoc": {
+    "methods": {
+      "REWARD_TOKEN()": {
+        "details": "for backward compatibility with previous implementation of the Incentives controller"
+      },
+      "claimRewards(address[],uint256,address)": {
+        "details": "Claims reward for an user, on all the assets of the lending pool, accumulating the pending rewards",
+        "params": {
+          "amount": "Amount of rewards to claim",
+          "to": "Address that will be receiving the rewards"
+        },
+        "returns": {
+          "_0": "Rewards claimed*"
+        }
+      },
+      "getUserUnclaimedRewards(address)": {
+        "details": "returns the unclaimed rewards of the user",
+        "params": {
+          "user": "the address of the user"
+        },
+        "returns": {
+          "_0": "the unclaimed user rewards"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
